@@ -28,8 +28,8 @@ async def security_headers(request, call_next):
     resp.headers.setdefault(
         "Content-Security-Policy",
         "default-src 'self'; "
-        "style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; "
-        "script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; "
+        "style-src 'self'"
+        "script-src 'self'"
         "img-src 'self' data:"
     )
     return resp
