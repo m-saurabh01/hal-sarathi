@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q&A Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>{{ edit_entry and "Edit" or "Add" }} Q&A Entry</h2>
+    <form method="post">
+        <input type="hidden" name="edit_index" value="{{ edit_index or '' }}">
+        <label>Question:</label>
+        <input type="text" name="question" value="{{ edit_entry.question if edit_entry else '' }}" required>
+        <label>Keywords (comma-separated):</label>
+        <input type="text" name="keywords" value="{{ ', '.join(edit_entry.keywords) if edit_entry else '' }}">
+        <label>Answer:</label>
+        <textarea name="answer" rows="4" required>{{ edit_entry.answer if edit_entry else '' }}</textarea>
+        <button class="btn" type="submit">Save</button>
+        {% if edit_entry %}
+        <a class="cancel" href="{{ url_for('form') }}">Cancel Edit</a>
+        {% endif %}
+    </form>
+
+    <hr>
+
+    <h3>All Q&A Entries</h3>
+    <a href="{{ url_for('import_excel') }}" class="btn">Import Excel</a>
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Keywords</th>
+            <th>Actions</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.question }}</td>
+            <td>{{ item.keywords | join(', ') }}</td>
+            <td>
+                <a href="{{ url_for('edit', index=full_data|length - loop.index) }}">Edit</a> |
+                <a href="{{ url_for('delete', index=full_data|length - loop.index) }}" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="pagination">
+        {% if page > 1 %}
+            <a href="{{ url_for('form', page=page-1) }}">&laquo; Prev</a>
+        {% endif %}
+        Page {{ page }} of {{ total_pages }}
+        {% if page < total_pages %}
+            <a href="{{ url_for('form', page=page+1) }}">Next &raquo;</a>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

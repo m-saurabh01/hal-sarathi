@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Offline Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Offline Chatbot</h1>
+        <div id="chat-box" class="chat-box"></div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Type your question..." autofocus>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        async function sendMessage(optionalText = null) {
+            const input = document.getElementById("user-input");
+            const chatBox = document.getElementById("chat-box");
+            const userText = optionalText || input.value.trim();
+            if (!userText) return;
+
+            // Show user message
+            const userDiv = document.createElement("div");
+            userDiv.classList.add("user");
+            userDiv.textContent = "🧑 You: " + userText;
+            chatBox.appendChild(userDiv);
+            input.value = '';
+
+            // Add bot placeholder
+            const botDiv = document.createElement("div");
+            botDiv.classList.add("bot");
+            const typingSpan = document.createElement("span");
+            typingSpan.id = "typing";
+            botDiv.innerHTML = "🤖 Bot: ";
+            botDiv.appendChild(typingSpan);
+            chatBox.appendChild(botDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            const response = await fetch("/ask", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userText })
+            });
+
+            const data = await response.json();
+            const replyHTML = data.reply;
+
+            // Animate typing plain text, then render full HTML
+            let i = 0;
+            function typeNext() {
+                if (i < replyHTML.length) {
+                    typingSpan.textContent += replyHTML.charAt(i);
+                    i++;
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                    setTimeout(typeNext, 15);
+                } else {
+                    typingSpan.innerHTML = replyHTML;
+                }
+            }
+            typeNext();
+        }
+
+        // Handle suggestion button clicks
+        document.addEventListener("click", function (e) {
+            if (e.target.classList.contains("suggestion-btn")) {
+                const question = e.target.textContent;
+                document.getElementById("user-input").value = question;
+                sendMessage(question);
+            }
+        });
+
+        // Send on Enter key
+        document.getElementById("user-input").addEventListener("keypress", function (e) {
+            if (e.key === "Enter") sendMessage();
+        });
+    </script>
+</body>
+</html>

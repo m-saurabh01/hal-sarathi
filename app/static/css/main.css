@@ -1,0 +1,43 @@
+:root{--border:#e5e7eb}
+*{box-sizing:border-box}
+.brand-logo{width:200px;height:100px;object-fit:cover;object-position:center;border-radius:8px;display:inline-block}
+.chip{border:1px solid var(--border);background:#fff;color:#0b1220;padding:.35rem .6rem;border-radius:9px;cursor:pointer}
+.chip:hover{background:#f8fafc;color:#0b1220}
+#chat{height:100%;overflow:auto}
+#chat .user{align-self:flex-end; background:#f8fafc; color:#0b1220; padding:.6rem .8rem; border-radius:10px; max-width:80%; box-shadow:0 1px 2px rgba(0,0,0,.04)}
+#chat .bot{align-self:flex-start; background:#f8fafc; color:#0b1220; padding:.6rem .8rem; border:1px solid #eef2f7; border-radius:10px; max-width:100%; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.suggestion-btn{margin:.2rem 0;padding:.35rem .6rem;border-radius:8px;border:1px solid #e5e7eb;background:#fff;color:#0b1220;cursor:pointer}
+.highlight{background:#fff7cc;padding:0 .15rem;border-radius:4px}
+/* Suggestions below the bot bubble */
+.msg-suggestions{margin-top:.5rem; margin-left:5px}
+.msg-suggestions .chip{background:#fff}
+.msg-suggestions .chip:hover{background:#f8fafc}
+/* Make chat card a constant height and let #chat fill it */
+.chat-card{height:65vh}
+.chat-card .card-body{display:flex;flex-direction:column;height:100%}
+/* Optional: slightly shorter on very small screens */
+@media (max-width: 576px){
+	.chat-card{height:60vh}
+}
+
+/* Chat header logo */
+.chat-header .chat-logo{height:28px;opacity:.85}
+
+/* Chat rows with icons */
+.msg-row{display:flex; gap:.75rem; align-items:flex-start}
+.msg-row.bot{justify-content:flex-start}
+.msg-row.user{justify-content:flex-end}
+.msg-icon{width:36px;height:36px;border-radius:50%;overflow:hidden;flex:0 0 36px;border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center}
+.msg-icon img{width:100%;height:100%;object-fit:cover}
+.msg-bubble{max-width:80%; padding:.6rem .8rem; border-radius:12px; line-height:1.4}
+.msg-row.bot .msg-bubble{background:#f1f5ff; border:1px solid #e1e8ff; color:#0b1220}
+.msg-row.user .msg-bubble{background:#e9f2ff; border:1px solid #d9e6ff; color:#0b1220}
+/* Make user avatar blend in (no border box), bot keeps bordered avatar */
+.msg-row.user .msg-icon{border:none;background:transparent}
+.msg-bubble{box-shadow:0 1px 2px rgba(0,0,0,.03);max-width:100%;}
+
+.msg-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space between bubble and suggestions */
+}

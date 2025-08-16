@@ -1,0 +1,144 @@
+[
+  {
+    "id": "tomcat is not starting, what should i check first?",
+    "question": "Tomcat is not starting, what should I check first?",
+    "answer": "Check if the port (default 8080) is already in use and verify JAVA_HOME is set correctly.",
+    "keywords": [
+      "Tomcat",
+      "startup issue",
+      "port conflict",
+      "JAVA_HOME"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806415Z"
+  },
+  {
+    "id": "how do i change tomcat’s default port?",
+    "question": "How do I change Tomcat’s default port?",
+    "answer": "Edit the `server.xml` file in the Tomcat `conf` folder and modify the Connector port value.",
+    "keywords": [
+      "Tomcat",
+      "port change",
+      "server.xml",
+      "Connector"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806422Z"
+  },
+  {
+    "id": "why am i getting a 404 error after starting tomcat?",
+    "question": "Why am I getting a 404 error after starting Tomcat?",
+    "answer": "This usually means the application is not deployed correctly or the WAR file is missing/incorrect.",
+    "keywords": [
+      "Tomcat",
+      "404 error",
+      "WAR file",
+      "deployment issue"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806402Z"
+  },
+  {
+    "id": "how can i increase tomcat’s memory allocation?",
+    "question": "How can I increase Tomcat’s memory allocation?",
+    "answer": "Set environment variables `CATALINA_OPTS` or `JAVA_OPTS` with `-Xms` and `-Xmx` values.",
+    "keywords": [
+      "Tomcat",
+      "memory",
+      "JAVA_OPTS",
+      "CATALINA_OPTS"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806409Z"
+  },
+  {
+    "id": "war file is not deploying automatically, why?",
+    "question": "WAR file is not deploying automatically, why?",
+    "answer": "Ensure the WAR file is placed in the `webapps` folder and Tomcat has write permissions.",
+    "keywords": [
+      "Deployment",
+      "WAR file",
+      "Tomcat",
+      "webapps folder"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806544Z"
+  },
+  {
+    "id": "how do i deploy an application manually on tomcat?",
+    "question": "How do I deploy an application manually on Tomcat?",
+    "answer": "Copy the WAR file to `webapps` or use the Tomcat Manager web interface.",
+    "keywords": [
+      "Tomcat",
+      "manual deployment",
+      "WAR",
+      "manager app"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806550Z"
+  },
+  {
+    "id": "how to check installed java version?",
+    "question": "How to check installed Java version?",
+    "answer": "Run `java -version` in the command line to check the installed version.",
+    "keywords": [
+      "Java",
+      "version check",
+      "command line"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806667Z"
+  },
+  {
+    "id": "why do i get 'java_home not set' error?",
+    "question": "Why do I get 'JAVA_HOME not set' error?",
+    "answer": "You need to set the JAVA_HOME environment variable pointing to your JDK installation directory.",
+    "keywords": [
+      "Java",
+      "JAVA_HOME",
+      "environment variable",
+      "error"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806673Z"
+  },
+  {
+    "id": "how to connect to db2 database from command line?",
+    "question": "How to connect to DB2 database from command line?",
+    "answer": "Use `db2 connect to <dbname> user <username> using <password>` command.",
+    "keywords": [
+      "DB2",
+      "connection",
+      "command line",
+      "authentication"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806799Z"
+  },
+  {
+    "id": "why am i getting sql1035n the database is not accessible?",
+    "question": "Why am I getting SQL1035N The database is not accessible?",
+    "answer": "It means the DB2 instance is down, start it using `db2start`.",
+    "keywords": [
+      "DB2",
+      "SQL1035N",
+      "database inaccessible",
+      "db2start"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806806Z"
+  },
+  {
+    "id": "how to check logs when tomcat fails to start?",
+    "question": "How to check logs when Tomcat fails to start?",
+    "answer": "Check the `catalina.out` and application logs in `logs` folder.",
+    "keywords": [
+      "Tomcat",
+      "logs",
+      "catalina.out",
+      "troubleshooting"
+    ],
+    "tags": [],
+    "updated_at": "2025-08-16T17:57:24.806870Z"
+  }
+]

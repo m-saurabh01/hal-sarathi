@@ -1,0 +1,146 @@
+[
+    {
+        "question": "how to raise workorder?",
+        "keywords": [
+            "raise workorder",
+            "create workorder",
+            "want to create workorder"
+        ],
+        "answer": "1. Login to the application\r\n2. Go to workorder tab \r\n3. Click on create button."
+    },
+    {
+        "question": "how to resolve tomcat port error",
+        "keywords": [
+            "tomcat port",
+            "default port tomcat",
+            "80 port issue"
+        ],
+        "answer": "1.Go to server.xml\r\n2.Change the default port 80 to 8082."
+    },
+    {
+        "question": "how to create snag",
+        "keywords": [
+            "create snag",
+            "report snag",
+            "snag reporting"
+        ],
+        "answer": "1. Login to the application\r\n2. Go to snag reporting tab \r\n3. Click on create button."
+    },
+    {
+        "question": "how to load snag details?",
+        "keywords": [
+            "snag",
+            "snag reporting"
+        ],
+        "answer": "11. Login to the application 2. Go to snag reporting tab 3. Click on create button.yyyy"
+    },
+    {
+        "question": "snag testing?",
+        "keywords": [
+            "snag",
+            "snag reporting"
+        ],
+        "answer": "111. Login to the application 2. Go to snag reporting tab 3. Click on create button."
+    },
+    {
+        "question": "Hi",
+        "keywords": [
+            "hello",
+            "hii",
+            "hey"
+        ],
+        "answer": "How can I help you?"
+    },
+    {
+        "question": "What is Python?",
+        "answer": "Python is a high-level programming language.",
+        "keywords": [
+            "python",
+            "programming",
+            "language"
+        ]
+    },
+    {
+        "question": "What is Flask?",
+        "answer": "Flask is a micro web framework in Python.",
+        "keywords": [
+            "flask",
+            "web",
+            "python"
+        ]
+    },
+    {
+        "question": "What is AI?",
+        "answer": "AI stands for Artificial Intelligence.",
+        "keywords": [
+            "AI",
+            "artificial",
+            "intelligence"
+        ]
+    },
+    {
+        "question": "What is machine learning?",
+        "answer": "Machine learning is a subset of AI.",
+        "keywords": [
+            "ML",
+            "machine",
+            "learning",
+            "AI"
+        ]
+    },
+    {
+        "question": "How to install Python?",
+        "answer": "Download from python.org and install it.",
+        "keywords": [
+            "install",
+            "python",
+            "setup"
+        ]
+    },
+    {
+        "question": "What is Python?",
+        "keywords": [
+            "python",
+            "programming",
+            "language"
+        ],
+        "answer": "Python is a high-level programming language."
+    },
+    {
+        "question": "What is Flask?",
+        "keywords": [
+            "flask",
+            "web",
+            "python"
+        ],
+        "answer": "Flask is a micro web framework in Python."
+    },
+    {
+        "question": "What is AI?",
+        "keywords": [
+            "AI",
+            "artificial",
+            "intelligence"
+        ],
+        "answer": "AI stands for Artificial Intelligence."
+    },
+    {
+        "question": "What is machine learning?",
+        "keywords": [
+            "ML",
+            "machine",
+            "learning",
+            "AI"
+        ],
+        "answer": "Machine learning is a subset of AI."
+    },
+    {
+        "question": "How to install Python?",
+        "keywords": [
+            "install",
+            "python",
+            "setup"
+        ],
+        "answer": "Download from python.org and install it."
+    }
+]
