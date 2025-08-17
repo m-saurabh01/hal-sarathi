@@ -6,20 +6,20 @@ A deep dive into the Offline Chatbot codebase: architecture, data flow, files, A
 
 ```mermaid
 flowchart LR
-  subgraph Client[Browser]
-    U[User UI (user.html + user.js)]
-    A[Admin UI (admin.html + admin.js)]
+  subgraph Client [Browser]
+    U[User UI<br/>user.html + user.js]
+    A[Admin UI<br/>admin.html + admin.js]
   end
 
-  subgraph Server[FastAPI App]
-    M[main.py\nCSP/CORS/Static]
-    R1[public.py\n/, /ask, /samples]
-    R2[admin.py\n/admin, /admin/upload, /admin/unmatched]
-    S1[data.py\nload/save, backups, upsert]
-    S2[matcher.py\nBM25-ish + fuzzy]
-    S3[embeddings.py\noptional local model]
-    S4[logging.py\nunmatched/matched logs]
-    S5[auth.py\nHTTP Basic]
+  subgraph Server [FastAPI App]
+    M[main.py<br/>CSP/CORS/Static]
+    R1[public.py<br/>/, /ask, /samples]
+    R2[admin.py<br/>/admin, /admin/upload, /admin/unmatched]
+    S1[data.py<br/>load/save, backups, upsert]
+    S2[matcher.py<br/>BM25-ish + fuzzy]
+    S3[embeddings.py<br/>optional local model]
+    S4[logging.py<br/>unmatched/matched logs]
+    S5[auth.py<br/>HTTP Basic]
   end
 
   U -- ask --> R1
@@ -53,11 +53,11 @@ flowchart LR
 
 ```mermaid
 sequenceDiagram
-  participant B as Browser (user.js)
-  participant P as Router (public.py)
-  participant M as Matcher (matcher.py)
-  participant E as Embeddings (embeddings.py)
-  participant L as Log (logging.py)
+  participant B as "Browser (user.js)"
+  participant P as "Router (public.py)"
+  participant M as "Matcher (matcher.py)"
+  participant E as "Embeddings (embeddings.py)"
+  participant L as "Log (logging.py)"
 
   B->>P: POST /ask { message }
   P->>M: score_all(message)
@@ -76,10 +76,10 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-  participant Admin as Browser (admin.js)
-  participant A as Router (admin.py)
-  participant D as DataService (data.py)
-  participant P as Public Router (public.py)
+  participant Admin as "Browser (admin.js)"
+  participant A as "Router (admin.py)"
+  participant D as "DataService (data.py)"
+  participant P as "Public Router (public.py)"
 
   Admin->>A: POST /admin/upload (CSV/XLSX)
   A->>D: upsert_from_rows(rows)
