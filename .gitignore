@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python packaging
+*.egg-info/
+.eggs/
+
+# Logs and data backups
+*.log
+/data/backups/
+/data/unmatched.csv
+/data/uploads-legacy/
+
+# Legacy trash (kept locally only)
+/.trash/
+
+# Local models and large files
+/all-MiniLM-L6-v2-optimized/
+
+# Editor
+.vscode/
+.idea/
