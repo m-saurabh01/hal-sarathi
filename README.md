@@ -80,6 +80,15 @@ Notes:
 - When `id` is omitted, it is derived from the question. Repeated questions in the same sheet are auto-deduplicated (last wins; keywords/tags merged). If you need distinct entries, supply unique `id`s.
 - Uploading creates a timestamped backup of `data/data.json` in `data/backups/` and hot-reloads the KB.
 
+### Import modes
+
+- Replace (default): Overwrites the existing KB with only the rows in the uploaded file. Items not in the file are removed. Backup is created automatically.
+- Append (merge): Adds or updates rows into the current KB, without removing anything. If an uploaded row matches an existing `id` (or derived id from the question), its answer replaces the old one and keywords/tags are merged uniquely. Duplicates within the same upload are auto-deduped (last row wins) unless a duplicate explicit `id` is provided, which is an error.
+
+How to use:
+- In Admin UI, choose “Append (merge)” in the Import mode selector before uploading.
+- API: POST multipart form to `/admin/upload` with fields: `file=<csv|xlsx>`, `mode=append` (or `replace`).
+
 ---
 
 ## Security & privacy

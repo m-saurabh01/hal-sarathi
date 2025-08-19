@@ -24,13 +24,16 @@ async def security_headers(request, call_next):
     resp.headers.setdefault("X-Content-Type-Options", "nosniff")
     resp.headers.setdefault("X-Frame-Options", "DENY")
     resp.headers.setdefault("Referrer-Policy", "no-referrer")
-    # NOTE: Temporarily allow Bootstrap CDN; when you self-host assets, switch back to 'self' only.
+    # Content Security Policy: self-hosted assets only; allow inline styles used in templates
     resp.headers.setdefault(
         "Content-Security-Policy",
         "default-src 'self'; "
-        "style-src 'self'"
-        "script-src 'self'"
-        "img-src 'self' data:"
+        "script-src 'self'; "
+        "style-src 'self' 'unsafe-inline'; "
+        "img-src 'self' data:; "
+        "font-src 'self' data:; "
+        "connect-src 'self'; "
+        "frame-ancestors 'none'"
     )
     return resp
 

@@ -52,8 +52,16 @@ class DataService:
         KB_PATH.write_text(json.dumps(serial, ensure_ascii=False, indent=2), encoding="utf-8")
 
     @staticmethod
-    def upsert_from_rows(rows: List[Dict[str, str]]) -> Tuple[List[KBItem], Dict[str, int], List[str]]:
-        """Validate rows and produce new KB list. Returns (items, stats, errors)."""
+    def upsert_from_rows(rows: List[Dict[str, str]], mode: str = "replace") -> Tuple[List[KBItem], Dict[str, int], List[str]]:
+        """Validate rows and produce a KB list.
+        mode: 'replace' (default) replaces the KB with uploaded rows;
+              'append' merges uploaded rows into existing KB (no removals).
+        Returns: (items, stats, errors)
+        """
+        mode = (mode or "replace").lower().strip()
+        if mode not in {"replace", "append"}:
+            mode = "replace"
+
         current = {it.id: it for it in DataService.load_kb()}
         errors: List[str] = []
         items_by_id: Dict[str, KBItem] = {}
@@ -107,11 +115,51 @@ class DataService:
                     updated_at=datetime.utcnow(),
                 )
 
-        items: List[KBItem] = list(items_by_id.values())
-        stats = {
-            "added": sum(1 for it in items if it.id not in current),
-            "updated": sum(1 for it in items if it.id in current),
-            "removed": max(0, len(current) - len(items)),
-            "deduplicated": dedup_count,
-        }
-        return items, stats, errors
+        if mode == "replace":
+            items: List[KBItem] = list(items_by_id.values())
+            stats = {
+                "added": sum(1 for it in items if it.id not in current),
+                "updated": sum(1 for it in items if it.id in current),
+                "removed": max(0, len(current) - len(items)),
+                "deduplicated": dedup_count,
+            }
+            return items, stats, errors
+        else:  # append/merge
+            merged: Dict[str, KBItem] = {k: v for k, v in current.items()}
+            added_cnt = 0
+            updated_cnt = 0
+
+            for _id, new_item in items_by_id.items():
+                if _id in merged:
+                    prev = merged[_id]
+                    # Merge: uploaded answer replaces; merge keywords/tags unique
+                    merged_kws = list(dict.fromkeys((prev.keywords or []) + (new_item.keywords or [])))[:20]
+                    merged_tags = list(dict.fromkeys((prev.tags or []) + (new_item.tags or [])))[:10]
+                    merged[_id] = KBItem(
+                        id=_id,
+                        question=new_item.question or prev.question,
+                        answer=new_item.answer or prev.answer,
+                        keywords=merged_kws,
+                        tags=merged_tags,
+                        updated_at=datetime.utcnow(),
+                    )
+                    updated_cnt += 1
+                else:
+                    merged[_id] = KBItem(
+                        id=_id,
+                        question=new_item.question,
+                        answer=new_item.answer,
+                        keywords=new_item.keywords,
+                        tags=new_item.tags,
+                        updated_at=datetime.utcnow(),
+                    )
+                    added_cnt += 1
+
+            items = list(merged.values())
+            stats = {
+                "added": added_cnt,
+                "updated": updated_cnt,
+                "removed": 0,
+                "deduplicated": dedup_count,
+            }
+            return items, stats, errors

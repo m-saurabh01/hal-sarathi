@@ -11,7 +11,8 @@
       return;
     }
     const s = payload.stats || {};
-    result.innerHTML = `<div class="alert alert-success">Applied. Added: <strong>${s.added||0}</strong>, Updated: <strong>${s.updated||0}</strong>, Removed: <strong>${s.removed||0}</strong>.</div>`;
+    const mode = payload.mode || (document.getElementById('mode')?.value || 'replace');
+    result.innerHTML = `<div class="alert alert-success">${mode.toUpperCase()} applied. Added: <strong>${s.added||0}</strong>, Updated: <strong>${s.updated||0}</strong>, Removed: <strong>${s.removed||0}</strong>, Deduped: <strong>${s.deduplicated||0}</strong>.</div>`;
   }
 
   form?.addEventListener('submit', async (e) => {

@@ -21,22 +21,22 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="HAL Sarathi Admin" />
   <link rel="apple-touch-icon" href="/static/img/logo.svg" />
-  <link rel="manifest" href="data:application/manifest+json,{
-  \"name\": \"HAL Sarathi Admin\",
-  \"short_name\": \"HS Admin\",
-  \"display\": \"standalone\"
-}" />
+  <link rel="manifest" href="/static/manifest.webmanifest" />
   <meta http-equiv="Cache-Control" content="no-store" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 </head>
 <body class="bg-light">
-  <nav class="navbar navbar-expand-lg bg-white border-bottom">
-    <div class="container">
+  <nav class="navbar navbar-light bg-white border-bottom">
+    <div class="container d-flex align-items-center">
       <a class="navbar-brand d-flex align-items-center" href="/admin">
         <img src="/static/img/logo.png" class="brand-logo" width="40" height="40" alt="Logo"/>
       </a>
-      <div class="ms-auto small text-muted">Offline, CSV-only</div>
+      <div class="ms-auto d-flex align-items-center gap-3 small text-muted">
+        <span class="d-none d-md-inline">Admin Dashboard</span>
+        <span class="vr"></span>
+        <a href="/" class="text-decoration-none">User</a>
+      </div>
     </div>
   </nav>
 
@@ -45,19 +45,29 @@
       <div class="col-12 col-lg-7">
         <div class="card shadow-sm card-min">
           <div class="card-body">
-            <h5 class="card-title">Upload Knowledge Base</h5>
-            <p class="text-secondary">Upload a CSV or Excel (.xlsx). Required columns: <span class="mono">question, answer</span>. Optional: <span class="mono">id, keywords, tags</span>. Keywords/tags use semicolons ; as separators.</p>
+            <h5 class="card-title mb-2">Upload Knowledge Base</h5>
+            <p class="text-secondary mb-4">CSV or Excel (.xlsx). Required: <span class="mono">question, answer</span>. Optional: <span class="mono">id, keywords, tags</span>. Use semicolons ; or commas , as separators.</p>
             <form id="uploadForm" class="d-flex flex-column gap-3" enctype="multipart/form-data" action="/admin/upload" method="post">
-              <div>
-                <input class="form-control" type="file" name="file" accept=".csv,.xlsx" required aria-label="CSV or XLSX file" />
+              <div class="row g-3 align-items-end">
+                <div class="col-12">
+                  <label class="form-label" for="file">File</label>
+                  <input id="file" class="form-control" type="file" name="file" accept=".csv,.xlsx" required aria-label="CSV or XLSX file" />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="mode">Import mode</label>
+                  <select class="form-select" name="mode" id="mode" aria-label="Import mode">
+                    <option value="replace" selected>Replace</option>
+                    <option value="append">Append</option>
+                  </select>
+                </div>
+                <div class="col-12 col-md-6 d-flex align-items-end">
+                  <button class="btn btn-primary w-100" type="submit" id="uploadBtn">
+                    <span class="spinner-border spinner-border-sm me-2 d-none" id="busy" role="status" aria-hidden="true"></span>
+                    Upload & Apply
+                  </button>
+                </div>
               </div>
-              <div class="d-flex align-items-center gap-2">
-                <button class="btn btn-primary" type="submit" id="uploadBtn">
-                  <span class="spinner-border spinner-border-sm me-2 d-none" id="busy" role="status" aria-hidden="true"></span>
-                  Upload & Apply
-                </button>
-                <span id="hint" class="text-muted small">Existing data will be backed up automatically.</span>
-              </div>
+              <div class="small text-muted">Replace overwrites the KB. Append merges into the existing KB. A backup is created automatically.</div>
             </form>
             <div id="result" class="mt-3"></div>
           </div>
@@ -65,22 +75,22 @@
       </div>
 
       <div class="col-12 col-lg-5">
-        <div class="card shadow-sm card-min">
+        <div class="card shadow-sm card-min mb-4">
           <div class="card-body">
-            <h5 class="card-title">Unmatched Queries</h5>
+            <h5 class="card-title mb-2">Unmatched Queries</h5>
             <p class="text-secondary">Review questions the bot couldn't confidently answer.</p>
             <a class="btn btn-outline-secondary" href="/admin/unmatched">Open unmatched.csv</a>
-            <div class="small text-muted mt-2">This file contains sanitized text only (emails/phones removed).</div>
+            <div class="small text-muted mt-2">Sanitized text only (emails/phones removed).</div>
           </div>
         </div>
 
-        <div class="card shadow-sm mt-4">
+        <div class="card shadow-sm">
           <div class="card-body">
             <h6 class="card-title">Tips</h6>
             <ul class="mb-0 small text-secondary">
-              <li>Use short, clear questions; add 3–10 keywords per entry.</li>
-              <li>Export Excel as CSV (UTF‑8). Keep one header row.</li>
-              <li>To update an existing item, reuse the same <span class="mono">id</span>.</li>
+              <li>Use short, precise questions; add 3–10 keywords per entry.</li>
+              <li>Export Excel as CSV (UTF‑8) if needed. Keep a single header row.</li>
+              <li>To update an item, reuse its <span class="mono">id</span>, or the same question to derive the same id.</li>
             </ul>
           </div>
         </div>
