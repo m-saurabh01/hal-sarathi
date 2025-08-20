@@ -2,6 +2,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from typing import List, Tuple, Dict
+import uuid
+import unicodedata
 import re
 from datetime import datetime
 from pydantic import BaseModel
@@ -15,6 +17,24 @@ BACKUP_DIR.mkdir(parents=True, exist_ok=True)
 
 class DataService:
     @staticmethod
+    def _norm_question(text: str) -> str:
+        # Normalize Unicode, collapse whitespace, lowercase
+        t = unicodedata.normalize("NFKC", (text or "").strip())
+        t = re.sub(r"\s+", " ", t)
+        return t.lower()
+
+    @staticmethod
+    def _gen_id_from_question(question: str, current_ids: Dict[str, KBItem]) -> str:
+        """Deterministic, lite ID generator with legacy-compat.
+        - If an existing legacy ID (lowercased question) exists, reuse it to avoid breaking updates.
+        - Else, use UUIDv5 (namespace URL) of normalized question; return short hex.
+        """
+        legacy = DataService._norm_question(question)
+        if legacy in current_ids:
+            return legacy
+        u = uuid.uuid5(uuid.NAMESPACE_URL, legacy)
+        return f"q_{u.hex[:16]}"  # 64-bit equivalent; short and robust
+    @staticmethod
     def load_kb() -> List[KBItem]:
         if not KB_PATH.exists():
             return []
@@ -25,7 +45,7 @@ class DataService:
             # tolerate legacy without timestamps
             updated_at = it.get("updated_at") or datetime.utcnow().isoformat()
             items.append(KBItem(
-                id=str(it.get("id") or it["question"].lower().strip()),
+                id=str(it.get("id") or DataService._norm_question(it["question"])),
                 question=it["question"],
                 answer=it["answer"],
                 keywords=it.get("keywords", []),
@@ -67,10 +87,6 @@ class DataService:
         items_by_id: Dict[str, KBItem] = {}
         dedup_count = 0
 
-        def norm_id(text: str) -> str:
-            t = re.sub(r"\s+", " ", (text or "").strip().lower())
-            return t
-
         def split_multi(val: str) -> List[str]:
             raw = re.split(r"[;,]", val or "")
             return [s.strip() for s in raw if len(s.strip()) > 2]
@@ -82,7 +98,7 @@ class DataService:
             if not q or not a:
                 errors.append(f"Row {idx}: question/answer required")
                 continue
-            _id = provided_id or norm_id(q)
+            _id = provided_id or DataService._gen_id_from_question(q, current)
 
             kws = split_multi(r.get("keywords") or "")[:20]
             tags = [s.strip() for s in re.split(r"[;,]", r.get("tags") or "") if s.strip()][:10]

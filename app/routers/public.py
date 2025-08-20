@@ -61,11 +61,11 @@ async def ask(payload: AskRequest):
     # thresholds with graceful fallbacks
     if top_score >= 0.78:
         reply = _kb_items[top_idx].answer
-        # Exclude the top question and filter by relevance
-        suggestions = [q for (q, s) in top_questions if q != _kb_items[top_idx].question and s >= MIN_SUGGESTION_SCORE]
+        # Exclude the top question and filter by relevance, limit to 5
+        suggestions = [q for (q, s) in top_questions if q != _kb_items[top_idx].question and s >= MIN_SUGGESTION_SCORE][:5]
     elif top_score >= 0.6:
         # Prefer suggestions when available; otherwise provide the best answer
-        rel = [q for (q, s) in top_questions if s >= MIN_SUGGESTION_SCORE]
+        rel = [q for (q, s) in top_questions if s >= MIN_SUGGESTION_SCORE][:5]
         if rel:
             reply = "I found similar questions. Please choose one."
             suggestions = rel
@@ -73,7 +73,7 @@ async def ask(payload: AskRequest):
             reply = _kb_items[top_idx].answer
             suggestions = []
     else:
-        rel = [q for (q, s) in top_questions if s >= MIN_SUGGESTION_SCORE]
+        rel = [q for (q, s) in top_questions if s >= MIN_SUGGESTION_SCORE][:5]
         if rel:
             reply = "I found similar questions. Please choose one."
             suggestions = rel

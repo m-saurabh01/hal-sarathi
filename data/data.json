@@ -1,64 +1,6 @@
 [
   {
-    "id": "what is python?",
-    "question": "What is Python?",
-    "answer": "Python is a high-level programming language.",
-    "keywords": [
-      "python",
-      "programming",
-      "language"
-    ],
-    "tags": [],
-    "updated_at": "2025-08-17T15:53:23.808609Z"
-  },
-  {
-    "id": "what is flask?",
-    "question": "What is Flask?",
-    "answer": "Flask is a micro web framework in Python.",
-    "keywords": [
-      "flask",
-      "web",
-      "python"
-    ],
-    "tags": [],
-    "updated_at": "2025-08-17T15:53:23.808621Z"
-  },
-  {
-    "id": "what is ai?",
-    "question": "What is AI?",
-    "answer": "AI stands for Artificial Intelligence.",
-    "keywords": [
-      "artificial",
-      "intelligence"
-    ],
-    "tags": [],
-    "updated_at": "2025-08-17T15:53:23.808627Z"
-  },
-  {
-    "id": "what is machine learning?",
-    "question": "What is machine learning?",
-    "answer": "Machine learning is a subset of AI.",
-    "keywords": [
-      "machine",
-      "learning"
-    ],
-    "tags": [],
-    "updated_at": "2025-08-17T15:53:23.808633Z"
-  },
-  {
-    "id": "how to install python?",
-    "question": "How to install Python?",
-    "answer": "Download from python.org and install it.",
-    "keywords": [
-      "install",
-      "python",
-      "setup"
-    ],
-    "tags": [],
-    "updated_at": "2025-08-17T15:53:23.808639Z"
-  },
-  {
-    "id": "tomcat startup fails with 'address already in use'",
+    "id": "q_0f6b045ea9b6532e",
     "question": "Tomcat startup fails with 'Address already in use'",
     "answer": "Check which process is using the port (default 8080) and terminate it, or change Tomcat port in server.xml.",
     "keywords": [
@@ -67,10 +9,10 @@
       "port conflict"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913134Z"
+    "updated_at": "2025-08-20T07:30:15.716955Z"
   },
   {
-    "id": "how to enable https on tomcat?",
+    "id": "q_d5db2f6043d65683",
     "question": "How to enable HTTPS on Tomcat?",
     "answer": "1. Create or obtain an SSL certificate.\n2. Configure the <Connector> in server.xml with keystoreFile and keystorePass.\n3. Restart Tomcat to apply changes.",
     "keywords": [
@@ -80,10 +22,10 @@
       "Connector"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913143Z"
+    "updated_at": "2025-08-20T07:30:15.716989Z"
   },
   {
-    "id": "tomcat shows 500 internal server error for my app (tip 3)",
+    "id": "q_4f3c4386fbf15ec6",
     "question": "Tomcat shows 500 Internal Server Error for my app (Tip 3)",
     "answer": "1. Check Tomcat logs (`catalina.out`) for stack trace.\n2. Verify web.xml and context configuration.\n3. Ensure all required libraries are included in WEB-INF/lib.",
     "keywords": [
@@ -93,10 +35,10 @@
       "deployment issue"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913149Z"
+    "updated_at": "2025-08-20T07:30:15.717004Z"
   },
   {
-    "id": "how to configure multiple tomcat instances on same server? (tip 4)",
+    "id": "q_3d8814576d165b90",
     "question": "How to configure multiple Tomcat instances on same server? (Tip 4)",
     "answer": "1. Copy Tomcat installation directory for each instance.\n2. Change ports in server.xml (HTTP, shutdown, AJP) for each instance.\n3. Set separate CATALINA_BASE for each instance.",
     "keywords": [
@@ -105,10 +47,10 @@
       "port configuration"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913154Z"
+    "updated_at": "2025-08-20T07:30:15.717014Z"
   },
   {
-    "id": "how to enable access logs in tomcat? (tip 5)",
+    "id": "q_fe7b8b2316a9569e",
     "question": "How to enable access logs in Tomcat? (Tip 5)",
     "answer": "Edit server.xml or conf/context.xml and add AccessLogValve configuration.",
     "keywords": [
@@ -118,10 +60,10 @@
       "logging"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913160Z"
+    "updated_at": "2025-08-20T07:30:15.717024Z"
   },
   {
-    "id": "how to deploy a war file without restarting tomcat (tip 6)",
+    "id": "q_fffcfc61fdd85a0b",
     "question": "How to deploy a WAR file without restarting Tomcat (Tip 6)",
     "answer": "1. Use Tomcat Manager web interface to deploy the WAR file.\n2. Place WAR in `webapps` folder; Tomcat auto-deploys without restart if autoDeploy is true.",
     "keywords": [
@@ -130,10 +72,10 @@
       "autoDeploy"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913165Z"
+    "updated_at": "2025-08-20T07:30:15.717034Z"
   },
   {
-    "id": "app shows classnotfoundexception after deployment (tip 7)",
+    "id": "q_22d867a8a1585c37",
     "question": "App shows ClassNotFoundException after deployment (Tip 7)",
     "answer": "1. Ensure all required JAR files are in WEB-INF/lib.\n2. Check classpath configuration.\n3. Clear work folder to remove stale compiled classes.",
     "keywords": [
@@ -143,10 +85,10 @@
       "libraries"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913171Z"
+    "updated_at": "2025-08-20T07:30:15.717043Z"
   },
   {
-    "id": "how to hot-swap classes in tomcat (tip 8)",
+    "id": "q_3bf2dc465fb35e74",
     "question": "How to hot-swap classes in Tomcat (Tip 8)",
     "answer": "1. Use Tomcat's reloadable attribute in context.xml (only for dev).\n2. Consider using JRebel or Spring DevTools for more complex hot-swaps.",
     "keywords": [
@@ -156,10 +98,10 @@
       "development"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913176Z"
+    "updated_at": "2025-08-20T07:30:15.717052Z"
   },
   {
-    "id": "how to undeploy an application from tomcat (tip 9)",
+    "id": "q_bd2f40e73eed5bc1",
     "question": "How to undeploy an application from Tomcat (Tip 9)",
     "answer": "1. Delete the application folder from `webapps`.\n2. Delete corresponding WAR file.\n3. Restart Tomcat if needed.",
     "keywords": [
@@ -169,10 +111,10 @@
       "webapps"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913181Z"
+    "updated_at": "2025-08-20T07:30:15.717061Z"
   },
   {
-    "id": "why does my jsp show http 404 even after deployment (tip 10)",
+    "id": "q_b1cb83f87f6d56c8",
     "question": "Why does my JSP show HTTP 404 even after deployment (Tip 10)",
     "answer": "1. Check URL mapping in web.xml.\n2. Ensure the JSP file exists in correct folder structure.\n3. Check for spelling and case sensitivity.",
     "keywords": [
@@ -182,10 +124,10 @@
       "deployment"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913187Z"
+    "updated_at": "2025-08-20T07:30:15.717070Z"
   },
   {
-    "id": "java app fails with unsupportedclassversionerror (tip 11)",
+    "id": "q_af305edd89005aca",
     "question": "Java app fails with UnsupportedClassVersionError (Tip 11)",
     "answer": "1. Check Java JDK version used to compile vs runtime version.\n2. Upgrade JVM or recompile code with compatible JDK.",
     "keywords": [
@@ -194,10 +136,10 @@
       "JVM version"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913192Z"
+    "updated_at": "2025-08-20T07:30:15.717078Z"
   },
   {
-    "id": "how to set path and java_home on windows (tip 12)",
+    "id": "q_2af1f0afbfee5085",
     "question": "How to set PATH and JAVA_HOME on Windows (Tip 12)",
     "answer": "1. Open Environment Variables.\n2. Set JAVA_HOME to JDK folder.\n3. Add %JAVA_HOME%\\bin to PATH.",
     "keywords": [
@@ -208,10 +150,10 @@
       "Windows"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913198Z"
+    "updated_at": "2025-08-20T07:30:15.717088Z"
   },
   {
-    "id": "how to set java_home on mac/linux (tip 13)",
+    "id": "q_902418b8e33d5f5c",
     "question": "How to set JAVA_HOME on Mac/Linux (Tip 13)",
     "answer": "1. Open terminal.\n2. Add `export JAVA_HOME=/path/to/jdk` to ~/.bash_profile or ~/.zshrc.\n3. Run `source ~/.bash_profile` to apply.",
     "keywords": [
@@ -221,10 +163,10 @@
       "Linux"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913203Z"
+    "updated_at": "2025-08-20T07:30:15.717096Z"
   },
   {
-    "id": "how to check if java is installed properly (tip 14)",
+    "id": "q_09c0f57daafd573a",
     "question": "How to check if Java is installed properly (Tip 14)",
     "answer": "Run `java -version` and `javac -version` in terminal/command line.",
     "keywords": [
@@ -233,10 +175,10 @@
       "version"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913209Z"
+    "updated_at": "2025-08-20T07:30:15.717104Z"
   },
   {
-    "id": "java app fails with noclassdeffounderror (tip 15)",
+    "id": "q_3052a80140155a6f",
     "question": "Java app fails with NoClassDefFoundError (Tip 15)",
     "answer": "1. Check if the required class is in classpath.\n2. Ensure all dependent JARs are included.\n3. Check for typos or wrong package names.",
     "keywords": [
@@ -246,10 +188,10 @@
       "libraries"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913214Z"
+    "updated_at": "2025-08-20T07:30:15.717113Z"
   },
   {
-    "id": "db2 sql1031n: authorization failure (tip 16)",
+    "id": "q_f4ec48f3c5d05b63",
     "question": "DB2 SQL1031N: Authorization failure (Tip 16)",
     "answer": "Check username/password and privileges for the DB2 user trying to connect.",
     "keywords": [
@@ -259,10 +201,10 @@
       "connection"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913219Z"
+    "updated_at": "2025-08-20T07:30:15.717121Z"
   },
   {
-    "id": "how to start db2 instance (tip 17)",
+    "id": "q_84dbc5e81d105bea",
     "question": "How to start DB2 instance (Tip 17)",
     "answer": "Run `db2start` command in the instance environment.",
     "keywords": [
@@ -272,10 +214,10 @@
       "db2start"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913225Z"
+    "updated_at": "2025-08-20T07:30:15.717128Z"
   },
   {
-    "id": "how to create a new database in db2 (tip 18)",
+    "id": "q_e7f5d008d51c5214",
     "question": "How to create a new database in DB2 (Tip 18)",
     "answer": "Run `CREATE DATABASE <dbname>` from DB2 CLI.",
     "keywords": [
@@ -284,10 +226,10 @@
       "CLI"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913231Z"
+    "updated_at": "2025-08-20T07:30:15.717136Z"
   },
   {
-    "id": "db2 connection fails from java app (tip 19)",
+    "id": "q_6bfc1e1127de5994",
     "question": "DB2 connection fails from Java app (Tip 19)",
     "answer": "1. Verify JDBC URL, username, and password.\n2. Check that DB2 server is running and reachable from the network.\n3. Ensure JDBC driver is in classpath.",
     "keywords": [
@@ -297,10 +239,10 @@
       "connection"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913236Z"
+    "updated_at": "2025-08-20T07:30:15.717144Z"
   },
   {
-    "id": "how to backup db2 database (tip 20)",
+    "id": "q_f201643397495812",
     "question": "How to backup DB2 database (Tip 20)",
     "answer": "Run `BACKUP DATABASE <dbname> TO <path>` using DB2 CLI.",
     "keywords": [
@@ -309,10 +251,10 @@
       "database"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913241Z"
+    "updated_at": "2025-08-20T07:30:15.717152Z"
   },
   {
-    "id": "tomcat logs not updating, what to do (tip 21)",
+    "id": "q_e6bc031a04c45965",
     "question": "Tomcat logs not updating, what to do (Tip 21)",
     "answer": "1. Ensure Tomcat process has write permission to logs folder.\n2. Check logging configuration in server.xml or logging.properties.\n3. Restart Tomcat to apply logging changes.",
     "keywords": [
@@ -322,10 +264,10 @@
       "troubleshooting"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913246Z"
+    "updated_at": "2025-08-20T07:30:15.717160Z"
   },
   {
-    "id": "application throws outofmemoryerror (tip 22)",
+    "id": "q_9fa91ad4a8cd5f23",
     "question": "Application throws OutOfMemoryError (Tip 22)",
     "answer": "1. Increase JVM heap size using -Xmx option.\n2. Analyze memory usage using profiling tools.\n3. Check for memory leaks in the code.",
     "keywords": [
@@ -335,10 +277,10 @@
       "JVM"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913252Z"
+    "updated_at": "2025-08-20T07:30:15.717168Z"
   },
   {
-    "id": "why does tomcat take long to start (tip 23)",
+    "id": "q_2ff3cc9a44545fe6",
     "question": "Why does Tomcat take long to start (Tip 23)",
     "answer": "1. Check for large deployed apps or many applications.\n2. Disable unnecessary valves or listeners.\n3. Check server.xml for slow connectors.",
     "keywords": [
@@ -347,10 +289,10 @@
       "performance"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913257Z"
+    "updated_at": "2025-08-20T07:30:15.717176Z"
   },
   {
-    "id": "how to reset tomcat admin password (tip 24)",
+    "id": "q_0c613b59e53c5a98",
     "question": "How to reset Tomcat admin password (Tip 24)",
     "answer": "Edit tomcat-users.xml and update the user password, then restart Tomcat.",
     "keywords": [
@@ -360,10 +302,10 @@
       "tomcat-users.xml"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913262Z"
+    "updated_at": "2025-08-20T07:30:15.717184Z"
   },
   {
-    "id": "how to clear temporary files in tomcat (tip 25)",
+    "id": "q_ea707f3abc0b50f3",
     "question": "How to clear temporary files in Tomcat (Tip 25)",
     "answer": "1. Stop Tomcat.\n2. Delete contents of `work` folder.\n3. Restart Tomcat.",
     "keywords": [
@@ -373,10 +315,10 @@
       "cleanup"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913268Z"
+    "updated_at": "2025-08-20T07:30:15.717193Z"
   },
   {
-    "id": "tomcat startup fails with 'address already in use' (tip 26)",
+    "id": "q_72ae77c7df6a5464",
     "question": "Tomcat startup fails with 'Address already in use' (Tip 26)",
     "answer": "Check which process is using the port (default 8080) and terminate it, or change Tomcat port in server.xml.",
     "keywords": [
@@ -385,10 +327,10 @@
       "port conflict"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913273Z"
+    "updated_at": "2025-08-20T07:30:15.717201Z"
   },
   {
-    "id": "how to enable https on tomcat? (tip 27)",
+    "id": "q_897fb4333f76539b",
     "question": "How to enable HTTPS on Tomcat? (Tip 27)",
     "answer": "1. Create or obtain an SSL certificate.\n2. Configure the <Connector> in server.xml with keystoreFile and keystorePass.\n3. Restart Tomcat to apply changes.",
     "keywords": [
@@ -398,10 +340,10 @@
       "Connector"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913278Z"
+    "updated_at": "2025-08-20T07:30:15.717209Z"
   },
   {
-    "id": "tomcat shows 500 internal server error for my app (tip 28)",
+    "id": "q_4a111d131aad536b",
     "question": "Tomcat shows 500 Internal Server Error for my app (Tip 28)",
     "answer": "1. Check Tomcat logs (`catalina.out`) for stack trace.\n2. Verify web.xml and context configuration.\n3. Ensure all required libraries are included in WEB-INF/lib.",
     "keywords": [
@@ -411,10 +353,10 @@
       "deployment issue"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913284Z"
+    "updated_at": "2025-08-20T07:30:15.717217Z"
   },
   {
-    "id": "how to configure multiple tomcat instances on same server? (tip 29)",
+    "id": "q_bf5857c057cf53a4",
     "question": "How to configure multiple Tomcat instances on same server? (Tip 29)",
     "answer": "1. Copy Tomcat installation directory for each instance.\n2. Change ports in server.xml (HTTP, shutdown, AJP) for each instance.\n3. Set separate CATALINA_BASE for each instance.",
     "keywords": [
@@ -423,10 +365,10 @@
       "port configuration"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913289Z"
+    "updated_at": "2025-08-20T07:30:15.717225Z"
   },
   {
-    "id": "how to enable access logs in tomcat? (tip 30)",
+    "id": "q_9822f493d75354e6",
     "question": "How to enable access logs in Tomcat? (Tip 30)",
     "answer": "Edit server.xml or conf/context.xml and add AccessLogValve configuration.",
     "keywords": [
@@ -436,10 +378,10 @@
       "logging"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913294Z"
+    "updated_at": "2025-08-20T07:30:15.717233Z"
   },
   {
-    "id": "how to deploy a war file without restarting tomcat (tip 31)",
+    "id": "q_ebdaa802a8be536f",
     "question": "How to deploy a WAR file without restarting Tomcat (Tip 31)",
     "answer": "1. Use Tomcat Manager web interface to deploy the WAR file.\n2. Place WAR in `webapps` folder; Tomcat auto-deploys without restart if autoDeploy is true.",
     "keywords": [
@@ -448,10 +390,10 @@
       "autoDeploy"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913299Z"
+    "updated_at": "2025-08-20T07:30:15.717241Z"
   },
   {
-    "id": "app shows classnotfoundexception after deployment (tip 32)",
+    "id": "q_656fc3c8cc8757f7",
     "question": "App shows ClassNotFoundException after deployment (Tip 32)",
     "answer": "1. Ensure all required JAR files are in WEB-INF/lib.\n2. Check classpath configuration.\n3. Clear work folder to remove stale compiled classes.",
     "keywords": [
@@ -461,10 +403,10 @@
       "libraries"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913305Z"
+    "updated_at": "2025-08-20T07:30:15.717249Z"
   },
   {
-    "id": "how to hot-swap classes in tomcat (tip 33)",
+    "id": "q_c391120a214f5464",
     "question": "How to hot-swap classes in Tomcat (Tip 33)",
     "answer": "1. Use Tomcat's reloadable attribute in context.xml (only for dev).\n2. Consider using JRebel or Spring DevTools for more complex hot-swaps.",
     "keywords": [
@@ -474,10 +416,10 @@
       "development"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913310Z"
+    "updated_at": "2025-08-20T07:30:15.717257Z"
   },
   {
-    "id": "how to undeploy an application from tomcat (tip 34)",
+    "id": "q_de3dc2fef0a551ff",
     "question": "How to undeploy an application from Tomcat (Tip 34)",
     "answer": "1. Delete the application folder from `webapps`.\n2. Delete corresponding WAR file.\n3. Restart Tomcat if needed.",
     "keywords": [
@@ -487,10 +429,10 @@
       "webapps"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913315Z"
+    "updated_at": "2025-08-20T07:30:15.717265Z"
   },
   {
-    "id": "why does my jsp show http 404 even after deployment (tip 35)",
+    "id": "q_a273a3759e2a5ada",
     "question": "Why does my JSP show HTTP 404 even after deployment (Tip 35)",
     "answer": "1. Check URL mapping in web.xml.\n2. Ensure the JSP file exists in correct folder structure.\n3. Check for spelling and case sensitivity.",
     "keywords": [
@@ -500,10 +442,10 @@
       "deployment"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913320Z"
+    "updated_at": "2025-08-20T07:30:15.717273Z"
   },
   {
-    "id": "java app fails with unsupportedclassversionerror (tip 36)",
+    "id": "q_bbe28568ae565a38",
     "question": "Java app fails with UnsupportedClassVersionError (Tip 36)",
     "answer": "1. Check Java JDK version used to compile vs runtime version.\n2. Upgrade JVM or recompile code with compatible JDK.",
     "keywords": [
@@ -512,10 +454,10 @@
       "JVM version"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913325Z"
+    "updated_at": "2025-08-20T07:30:15.717281Z"
   },
   {
-    "id": "how to set path and java_home on windows (tip 37)",
+    "id": "q_180b06ded64a564c",
     "question": "How to set PATH and JAVA_HOME on Windows (Tip 37)",
     "answer": "1. Open Environment Variables.\n2. Set JAVA_HOME to JDK folder.\n3. Add %JAVA_HOME%\\bin to PATH.",
     "keywords": [
@@ -526,10 +468,10 @@
       "Windows"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913331Z"
+    "updated_at": "2025-08-20T07:30:15.717289Z"
   },
   {
-    "id": "how to set java_home on mac/linux (tip 38)",
+    "id": "q_f78804e1f6855003",
     "question": "How to set JAVA_HOME on Mac/Linux (Tip 38)",
     "answer": "1. Open terminal.\n2. Add `export JAVA_HOME=/path/to/jdk` to ~/.bash_profile or ~/.zshrc.\n3. Run `source ~/.bash_profile` to apply.",
     "keywords": [
@@ -539,10 +481,10 @@
       "Linux"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913336Z"
+    "updated_at": "2025-08-20T07:30:15.717297Z"
   },
   {
-    "id": "how to check if java is installed properly (tip 39)",
+    "id": "q_340ee819cffc520f",
     "question": "How to check if Java is installed properly (Tip 39)",
     "answer": "Run `java -version` and `javac -version` in terminal/command line.",
     "keywords": [
@@ -551,10 +493,10 @@
       "version"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913342Z"
+    "updated_at": "2025-08-20T07:30:15.717305Z"
   },
   {
-    "id": "java app fails with noclassdeffounderror (tip 40)",
+    "id": "q_5b1248a729d154e4",
     "question": "Java app fails with NoClassDefFoundError (Tip 40)",
     "answer": "1. Check if the required class is in classpath.\n2. Ensure all dependent JARs are included.\n3. Check for typos or wrong package names.",
     "keywords": [
@@ -564,10 +506,10 @@
       "libraries"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913348Z"
+    "updated_at": "2025-08-20T07:30:15.717313Z"
   },
   {
-    "id": "db2 sql1031n: authorization failure (tip 41)",
+    "id": "q_166a75a2c65456b6",
     "question": "DB2 SQL1031N: Authorization failure (Tip 41)",
     "answer": "Check username/password and privileges for the DB2 user trying to connect.",
     "keywords": [
@@ -577,10 +519,10 @@
       "connection"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913353Z"
+    "updated_at": "2025-08-20T07:30:15.717321Z"
   },
   {
-    "id": "how to start db2 instance (tip 42)",
+    "id": "q_4b56798f6f1a5003",
     "question": "How to start DB2 instance (Tip 42)",
     "answer": "Run `db2start` command in the instance environment.",
     "keywords": [
@@ -590,10 +532,10 @@
       "db2start"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913358Z"
+    "updated_at": "2025-08-20T07:30:15.717328Z"
   },
   {
-    "id": "how to create a new database in db2 (tip 43)",
+    "id": "q_4043e999016a5264",
     "question": "How to create a new database in DB2 (Tip 43)",
     "answer": "Run `CREATE DATABASE <dbname>` from DB2 CLI.",
     "keywords": [
@@ -602,10 +544,10 @@
       "CLI"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913363Z"
+    "updated_at": "2025-08-20T07:30:15.717336Z"
   },
   {
-    "id": "db2 connection fails from java app (tip 44)",
+    "id": "q_b4043f5ee98d542b",
     "question": "DB2 connection fails from Java app (Tip 44)",
     "answer": "1. Verify JDBC URL, username, and password.\n2. Check that DB2 server is running and reachable from the network.\n3. Ensure JDBC driver is in classpath.",
     "keywords": [
@@ -615,10 +557,10 @@
       "connection"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913369Z"
+    "updated_at": "2025-08-20T07:30:15.717344Z"
   },
   {
-    "id": "how to backup db2 database (tip 45)",
+    "id": "q_eb0f55b1fd7954b4",
     "question": "How to backup DB2 database (Tip 45)",
     "answer": "Run `BACKUP DATABASE <dbname> TO <path>` using DB2 CLI.",
     "keywords": [
@@ -627,10 +569,10 @@
       "database"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913374Z"
+    "updated_at": "2025-08-20T07:30:15.717352Z"
   },
   {
-    "id": "tomcat logs not updating, what to do (tip 46)",
+    "id": "q_03a605db9a915a24",
     "question": "Tomcat logs not updating, what to do (Tip 46)",
     "answer": "1. Ensure Tomcat process has write permission to logs folder.\n2. Check logging configuration in server.xml or logging.properties.\n3. Restart Tomcat to apply logging changes.",
     "keywords": [
@@ -640,10 +582,10 @@
       "troubleshooting"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913379Z"
+    "updated_at": "2025-08-20T07:30:15.717360Z"
   },
   {
-    "id": "application throws outofmemoryerror (tip 47)",
+    "id": "q_7bc0479975c35e21",
     "question": "Application throws OutOfMemoryError (Tip 47)",
     "answer": "1. Increase JVM heap size using -Xmx option.\n2. Analyze memory usage using profiling tools.\n3. Check for memory leaks in the code.",
     "keywords": [
@@ -653,10 +595,10 @@
       "JVM"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913384Z"
+    "updated_at": "2025-08-20T07:30:15.717367Z"
   },
   {
-    "id": "why does tomcat take long to start (tip 48)",
+    "id": "q_5e7eb50c02285790",
     "question": "Why does Tomcat take long to start (Tip 48)",
     "answer": "1. Check for large deployed apps or many applications.\n2. Disable unnecessary valves or listeners.\n3. Check server.xml for slow connectors.",
     "keywords": [
@@ -665,10 +607,10 @@
       "performance"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913392Z"
+    "updated_at": "2025-08-20T07:30:15.717375Z"
   },
   {
-    "id": "how to reset tomcat admin password (tip 49)",
+    "id": "q_fb5065cbef605125",
     "question": "How to reset Tomcat admin password (Tip 49)",
     "answer": "Edit tomcat-users.xml and update the user password, then restart Tomcat.",
     "keywords": [
@@ -678,10 +620,10 @@
       "tomcat-users.xml"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913397Z"
+    "updated_at": "2025-08-20T07:30:15.717383Z"
   },
   {
-    "id": "how to clear temporary files in tomcat (tip 50)",
+    "id": "q_87eca87222125386",
     "question": "How to clear temporary files in Tomcat (Tip 50)",
     "answer": "1. Stop Tomcat.\n2. Delete contents of `work` folder.\n3. Restart Tomcat.",
     "keywords": [
@@ -691,10 +633,10 @@
       "cleanup"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913402Z"
+    "updated_at": "2025-08-20T07:30:15.717391Z"
   },
   {
-    "id": "tomcat startup fails with 'address already in use' (tip 51)",
+    "id": "q_fd686c6eaa305372",
     "question": "Tomcat startup fails with 'Address already in use' (Tip 51)",
     "answer": "Check which process is using the port (default 8080) and terminate it, or change Tomcat port in server.xml.",
     "keywords": [
@@ -703,10 +645,10 @@
       "port conflict"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913408Z"
+    "updated_at": "2025-08-20T07:30:15.717399Z"
   },
   {
-    "id": "how to enable https on tomcat? (tip 52)",
+    "id": "q_bfb1f8ea055e548c",
     "question": "How to enable HTTPS on Tomcat? (Tip 52)",
     "answer": "1. Create or obtain an SSL certificate.\n2. Configure the <Connector> in server.xml with keystoreFile and keystorePass.\n3. Restart Tomcat to apply changes.",
     "keywords": [
@@ -716,10 +658,10 @@
       "Connector"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913413Z"
+    "updated_at": "2025-08-20T07:30:15.717406Z"
   },
   {
-    "id": "tomcat shows 500 internal server error for my app (tip 53)",
+    "id": "q_9c85b4489c5355fb",
     "question": "Tomcat shows 500 Internal Server Error for my app (Tip 53)",
     "answer": "1. Check Tomcat logs (`catalina.out`) for stack trace.\n2. Verify web.xml and context configuration.\n3. Ensure all required libraries are included in WEB-INF/lib.",
     "keywords": [
@@ -729,10 +671,10 @@
       "deployment issue"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913418Z"
+    "updated_at": "2025-08-20T07:30:15.717414Z"
   },
   {
-    "id": "how to configure multiple tomcat instances on same server? (tip 54)",
+    "id": "q_70078e5976b156a5",
     "question": "How to configure multiple Tomcat instances on same server? (Tip 54)",
     "answer": "1. Copy Tomcat installation directory for each instance.\n2. Change ports in server.xml (HTTP, shutdown, AJP) for each instance.\n3. Set separate CATALINA_BASE for each instance.",
     "keywords": [
@@ -741,10 +683,10 @@
       "port configuration"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913423Z"
+    "updated_at": "2025-08-20T07:30:15.717423Z"
   },
   {
-    "id": "how to enable access logs in tomcat? (tip 55)",
+    "id": "q_0545b63c655156c7",
     "question": "How to enable access logs in Tomcat? (Tip 55)",
     "answer": "Edit server.xml or conf/context.xml and add AccessLogValve configuration.",
     "keywords": [
@@ -754,10 +696,10 @@
       "logging"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913429Z"
+    "updated_at": "2025-08-20T07:30:15.717431Z"
   },
   {
-    "id": "how to deploy a war file without restarting tomcat (tip 56)",
+    "id": "q_6200faa892fe52e7",
     "question": "How to deploy a WAR file without restarting Tomcat (Tip 56)",
     "answer": "1. Use Tomcat Manager web interface to deploy the WAR file.\n2. Place WAR in `webapps` folder; Tomcat auto-deploys without restart if autoDeploy is true.",
     "keywords": [
@@ -766,10 +708,10 @@
       "autoDeploy"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913434Z"
+    "updated_at": "2025-08-20T07:30:15.717439Z"
   },
   {
-    "id": "app shows classnotfoundexception after deployment (tip 57)",
+    "id": "q_bfcc34f3fab6511e",
     "question": "App shows ClassNotFoundException after deployment (Tip 57)",
     "answer": "1. Ensure all required JAR files are in WEB-INF/lib.\n2. Check classpath configuration.\n3. Clear work folder to remove stale compiled classes.",
     "keywords": [
@@ -779,10 +721,10 @@
       "libraries"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913439Z"
+    "updated_at": "2025-08-20T07:30:15.717446Z"
   },
   {
-    "id": "how to hot-swap classes in tomcat (tip 58)",
+    "id": "q_44c570fa2c3957de",
     "question": "How to hot-swap classes in Tomcat (Tip 58)",
     "answer": "1. Use Tomcat's reloadable attribute in context.xml (only for dev).\n2. Consider using JRebel or Spring DevTools for more complex hot-swaps.",
     "keywords": [
@@ -792,10 +734,10 @@
       "development"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913445Z"
+    "updated_at": "2025-08-20T07:30:15.717454Z"
   },
   {
-    "id": "how to undeploy an application from tomcat (tip 59)",
+    "id": "q_dd274852c42b5fb4",
     "question": "How to undeploy an application from Tomcat (Tip 59)",
     "answer": "1. Delete the application folder from `webapps`.\n2. Delete corresponding WAR file.\n3. Restart Tomcat if needed.",
     "keywords": [
@@ -805,10 +747,10 @@
       "webapps"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913450Z"
+    "updated_at": "2025-08-20T07:30:15.717462Z"
   },
   {
-    "id": "why does my jsp show http 404 even after deployment (tip 60)",
+    "id": "q_ad77b7ff63d45c58",
     "question": "Why does my JSP show HTTP 404 even after deployment (Tip 60)",
     "answer": "1. Check URL mapping in web.xml.\n2. Ensure the JSP file exists in correct folder structure.\n3. Check for spelling and case sensitivity.",
     "keywords": [
@@ -818,10 +760,10 @@
       "deployment"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913455Z"
+    "updated_at": "2025-08-20T07:30:15.717470Z"
   },
   {
-    "id": "java app fails with unsupportedclassversionerror (tip 61)",
+    "id": "q_69cfbbab9176599e",
     "question": "Java app fails with UnsupportedClassVersionError (Tip 61)",
     "answer": "1. Check Java JDK version used to compile vs runtime version.\n2. Upgrade JVM or recompile code with compatible JDK.",
     "keywords": [
@@ -830,10 +772,10 @@
       "JVM version"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913460Z"
+    "updated_at": "2025-08-20T07:30:15.717478Z"
   },
   {
-    "id": "how to set path and java_home on windows (tip 62)",
+    "id": "q_7613eaf55896553d",
     "question": "How to set PATH and JAVA_HOME on Windows (Tip 62)",
     "answer": "1. Open Environment Variables.\n2. Set JAVA_HOME to JDK folder.\n3. Add %JAVA_HOME%\\bin to PATH.",
     "keywords": [
@@ -844,10 +786,10 @@
       "Windows"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913466Z"
+    "updated_at": "2025-08-20T07:30:15.717486Z"
   },
   {
-    "id": "how to set java_home on mac/linux (tip 63)",
+    "id": "q_1909c19d2b1f5023",
     "question": "How to set JAVA_HOME on Mac/Linux (Tip 63)",
     "answer": "1. Open terminal.\n2. Add `export JAVA_HOME=/path/to/jdk` to ~/.bash_profile or ~/.zshrc.\n3. Run `source ~/.bash_profile` to apply.",
     "keywords": [
@@ -857,10 +799,10 @@
       "Linux"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913471Z"
+    "updated_at": "2025-08-20T07:30:15.717494Z"
   },
   {
-    "id": "how to check if java is installed properly (tip 64)",
+    "id": "q_0769a9b1fb305305",
     "question": "How to check if Java is installed properly (Tip 64)",
     "answer": "Run `java -version` and `javac -version` in terminal/command line.",
     "keywords": [
@@ -869,10 +811,10 @@
       "version"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913476Z"
+    "updated_at": "2025-08-20T07:30:15.717502Z"
   },
   {
-    "id": "java app fails with noclassdeffounderror (tip 65)",
+    "id": "q_5a266c84ddbb56e9",
     "question": "Java app fails with NoClassDefFoundError (Tip 65)",
     "answer": "1. Check if the required class is in classpath.\n2. Ensure all dependent JARs are included.\n3. Check for typos or wrong package names.",
     "keywords": [
@@ -882,10 +824,10 @@
       "libraries"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.913481Z"
+    "updated_at": "2025-08-20T07:30:15.717510Z"
   },
   {
-    "id": "db2 sql1031n: authorization failure (tip 66)",
+    "id": "q_a6d815f2187b5726",
     "question": "DB2 SQL1031N: Authorization failure (Tip 66)",
     "answer": "Check username/password and privileges for the DB2 user trying to connect.",
     "keywords": [
@@ -895,10 +837,10 @@
       "connection"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.914969Z"
+    "updated_at": "2025-08-20T07:30:15.717517Z"
   },
   {
-    "id": "how to start db2 instance (tip 67)",
+    "id": "q_f402d47695385bcc",
     "question": "How to start DB2 instance (Tip 67)",
     "answer": "Run `db2start` command in the instance environment.",
     "keywords": [
@@ -908,10 +850,10 @@
       "db2start"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.914976Z"
+    "updated_at": "2025-08-20T07:30:15.717525Z"
   },
   {
-    "id": "how to create a new database in db2 (tip 68)",
+    "id": "q_45205c1dabed54b0",
     "question": "How to create a new database in DB2 (Tip 68)",
     "answer": "Run `CREATE DATABASE <dbname>` from DB2 CLI.",
     "keywords": [
@@ -920,10 +862,10 @@
       "CLI"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.914981Z"
+    "updated_at": "2025-08-20T07:30:15.717533Z"
   },
   {
-    "id": "db2 connection fails from java app (tip 69)",
+    "id": "q_c4e4b9bec7335514",
     "question": "DB2 connection fails from Java app (Tip 69)",
     "answer": "1. Verify JDBC URL, username, and password.\n2. Check that DB2 server is running and reachable from the network.\n3. Ensure JDBC driver is in classpath.",
     "keywords": [
@@ -933,10 +875,10 @@
       "connection"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.914986Z"
+    "updated_at": "2025-08-20T07:30:15.717540Z"
   },
   {
-    "id": "how to backup db2 database (tip 70)",
+    "id": "q_9120f6561ed05879",
     "question": "How to backup DB2 database (Tip 70)",
     "answer": "Run `BACKUP DATABASE <dbname> TO <path>` using DB2 CLI.",
     "keywords": [
@@ -945,10 +887,10 @@
       "database"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.914992Z"
+    "updated_at": "2025-08-20T07:30:15.717547Z"
   },
   {
-    "id": "tomcat logs not updating, what to do (tip 71)",
+    "id": "q_751efba7dd5c58c1",
     "question": "Tomcat logs not updating, what to do (Tip 71)",
     "answer": "1. Ensure Tomcat process has write permission to logs folder.\n2. Check logging configuration in server.xml or logging.properties.\n3. Restart Tomcat to apply logging changes.",
     "keywords": [
@@ -958,10 +900,10 @@
       "troubleshooting"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.914998Z"
+    "updated_at": "2025-08-20T07:30:15.717555Z"
   },
   {
-    "id": "application throws outofmemoryerror (tip 72)",
+    "id": "q_2baa8791343f5d0e",
     "question": "Application throws OutOfMemoryError (Tip 72)",
     "answer": "1. Increase JVM heap size using -Xmx option.\n2. Analyze memory usage using profiling tools.\n3. Check for memory leaks in the code.",
     "keywords": [
@@ -971,10 +913,10 @@
       "JVM"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915004Z"
+    "updated_at": "2025-08-20T07:30:15.717563Z"
   },
   {
-    "id": "why does tomcat take long to start (tip 73)",
+    "id": "q_9973671f2dc65af4",
     "question": "Why does Tomcat take long to start (Tip 73)",
     "answer": "1. Check for large deployed apps or many applications.\n2. Disable unnecessary valves or listeners.\n3. Check server.xml for slow connectors.",
     "keywords": [
@@ -983,10 +925,10 @@
       "performance"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915009Z"
+    "updated_at": "2025-08-20T07:30:15.717571Z"
   },
   {
-    "id": "how to reset tomcat admin password (tip 74)",
+    "id": "q_7489032542f4592f",
     "question": "How to reset Tomcat admin password (Tip 74)",
     "answer": "Edit tomcat-users.xml and update the user password, then restart Tomcat.",
     "keywords": [
@@ -996,10 +938,10 @@
       "tomcat-users.xml"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915015Z"
+    "updated_at": "2025-08-20T07:30:15.717578Z"
   },
   {
-    "id": "how to clear temporary files in tomcat (tip 75)",
+    "id": "q_9e8bf8c7cbc65550",
     "question": "How to clear temporary files in Tomcat (Tip 75)",
     "answer": "1. Stop Tomcat.\n2. Delete contents of `work` folder.\n3. Restart Tomcat.",
     "keywords": [
@@ -1009,10 +951,10 @@
       "cleanup"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915020Z"
+    "updated_at": "2025-08-20T07:30:15.717586Z"
   },
   {
-    "id": "tomcat startup fails with 'address already in use' (tip 76)",
+    "id": "q_19cfce5d6aa65f22",
     "question": "Tomcat startup fails with 'Address already in use' (Tip 76)",
     "answer": "Check which process is using the port (default 8080) and terminate it, or change Tomcat port in server.xml.",
     "keywords": [
@@ -1021,10 +963,10 @@
       "port conflict"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915026Z"
+    "updated_at": "2025-08-20T07:30:15.717593Z"
   },
   {
-    "id": "how to enable https on tomcat? (tip 77)",
+    "id": "q_3001a0dc5eab5f5b",
     "question": "How to enable HTTPS on Tomcat? (Tip 77)",
     "answer": "1. Create or obtain an SSL certificate.\n2. Configure the <Connector> in server.xml with keystoreFile and keystorePass.\n3. Restart Tomcat to apply changes.",
     "keywords": [
@@ -1034,10 +976,10 @@
       "Connector"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915031Z"
+    "updated_at": "2025-08-20T07:30:15.717601Z"
   },
   {
-    "id": "tomcat shows 500 internal server error for my app (tip 78)",
+    "id": "q_5c97d8e9da25526b",
     "question": "Tomcat shows 500 Internal Server Error for my app (Tip 78)",
     "answer": "1. Check Tomcat logs (`catalina.out`) for stack trace.\n2. Verify web.xml and context configuration.\n3. Ensure all required libraries are included in WEB-INF/lib.",
     "keywords": [
@@ -1047,10 +989,10 @@
       "deployment issue"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915037Z"
+    "updated_at": "2025-08-20T07:30:15.717609Z"
   },
   {
-    "id": "how to configure multiple tomcat instances on same server? (tip 79)",
+    "id": "q_39fa88ee2ec65ea8",
     "question": "How to configure multiple Tomcat instances on same server? (Tip 79)",
     "answer": "1. Copy Tomcat installation directory for each instance.\n2. Change ports in server.xml (HTTP, shutdown, AJP) for each instance.\n3. Set separate CATALINA_BASE for each instance.",
     "keywords": [
@@ -1059,10 +1001,10 @@
       "port configuration"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915042Z"
+    "updated_at": "2025-08-20T07:30:15.717617Z"
   },
   {
-    "id": "how to enable access logs in tomcat? (tip 80)",
+    "id": "q_4a64a966c9ff561a",
     "question": "How to enable access logs in Tomcat? (Tip 80)",
     "answer": "Edit server.xml or conf/context.xml and add AccessLogValve configuration.",
     "keywords": [
@@ -1072,10 +1014,10 @@
       "logging"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915048Z"
+    "updated_at": "2025-08-20T07:30:15.717625Z"
   },
   {
-    "id": "how to deploy a war file without restarting tomcat (tip 81)",
+    "id": "q_928bd61a69f55298",
     "question": "How to deploy a WAR file without restarting Tomcat (Tip 81)",
     "answer": "1. Use Tomcat Manager web interface to deploy the WAR file.\n2. Place WAR in `webapps` folder; Tomcat auto-deploys without restart if autoDeploy is true.",
     "keywords": [
@@ -1084,10 +1026,10 @@
       "autoDeploy"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915053Z"
+    "updated_at": "2025-08-20T07:30:15.717633Z"
   },
   {
-    "id": "app shows classnotfoundexception after deployment (tip 82)",
+    "id": "q_6b8a662a59bf5608",
     "question": "App shows ClassNotFoundException after deployment (Tip 82)",
     "answer": "1. Ensure all required JAR files are in WEB-INF/lib.\n2. Check classpath configuration.\n3. Clear work folder to remove stale compiled classes.",
     "keywords": [
@@ -1097,10 +1039,10 @@
       "libraries"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915060Z"
+    "updated_at": "2025-08-20T07:30:15.717642Z"
   },
   {
-    "id": "how to hot-swap classes in tomcat (tip 83)",
+    "id": "q_30a459af8b335d62",
     "question": "How to hot-swap classes in Tomcat (Tip 83)",
     "answer": "1. Use Tomcat's reloadable attribute in context.xml (only for dev).\n2. Consider using JRebel or Spring DevTools for more complex hot-swaps.",
     "keywords": [
@@ -1110,10 +1052,10 @@
       "development"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915066Z"
+    "updated_at": "2025-08-20T07:30:15.717656Z"
   },
   {
-    "id": "how to undeploy an application from tomcat (tip 84)",
+    "id": "q_330222a959f257f2",
     "question": "How to undeploy an application from Tomcat (Tip 84)",
     "answer": "1. Delete the application folder from `webapps`.\n2. Delete corresponding WAR file.\n3. Restart Tomcat if needed.",
     "keywords": [
@@ -1123,10 +1065,10 @@
       "webapps"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915071Z"
+    "updated_at": "2025-08-20T07:30:15.717665Z"
   },
   {
-    "id": "why does my jsp show http 404 even after deployment (tip 85)",
+    "id": "q_4a245db2222c5ae8",
     "question": "Why does my JSP show HTTP 404 even after deployment (Tip 85)",
     "answer": "1. Check URL mapping in web.xml.\n2. Ensure the JSP file exists in correct folder structure.\n3. Check for spelling and case sensitivity.",
     "keywords": [
@@ -1136,10 +1078,10 @@
       "deployment"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915077Z"
+    "updated_at": "2025-08-20T07:30:15.717673Z"
   },
   {
-    "id": "java app fails with unsupportedclassversionerror (tip 86)",
+    "id": "q_9d665220c4715ffa",
     "question": "Java app fails with UnsupportedClassVersionError (Tip 86)",
     "answer": "1. Check Java JDK version used to compile vs runtime version.\n2. Upgrade JVM or recompile code with compatible JDK.",
     "keywords": [
@@ -1148,10 +1090,10 @@
       "JVM version"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915082Z"
+    "updated_at": "2025-08-20T07:30:15.717683Z"
   },
   {
-    "id": "how to set path and java_home on windows (tip 87)",
+    "id": "q_4b4aae5364dd5025",
     "question": "How to set PATH and JAVA_HOME on Windows (Tip 87)",
     "answer": "1. Open Environment Variables.\n2. Set JAVA_HOME to JDK folder.\n3. Add %JAVA_HOME%\\bin to PATH.",
     "keywords": [
@@ -1162,10 +1104,10 @@
       "Windows"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915087Z"
+    "updated_at": "2025-08-20T07:30:15.717692Z"
   },
   {
-    "id": "how to set java_home on mac/linux (tip 88)",
+    "id": "q_6f2c2032761a5294",
     "question": "How to set JAVA_HOME on Mac/Linux (Tip 88)",
     "answer": "1. Open terminal.\n2. Add `export JAVA_HOME=/path/to/jdk` to ~/.bash_profile or ~/.zshrc.\n3. Run `source ~/.bash_profile` to apply.",
     "keywords": [
@@ -1175,10 +1117,10 @@
       "Linux"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915093Z"
+    "updated_at": "2025-08-20T07:30:15.717699Z"
   },
   {
-    "id": "how to check if java is installed properly (tip 89)",
+    "id": "q_fb9b112eda615734",
     "question": "How to check if Java is installed properly (Tip 89)",
     "answer": "Run `java -version` and `javac -version` in terminal/command line.",
     "keywords": [
@@ -1187,10 +1129,10 @@
       "version"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915098Z"
+    "updated_at": "2025-08-20T07:30:15.717707Z"
   },
   {
-    "id": "java app fails with noclassdeffounderror (tip 90)",
+    "id": "q_316457a55e9e5294",
     "question": "Java app fails with NoClassDefFoundError (Tip 90)",
     "answer": "1. Check if the required class is in classpath.\n2. Ensure all dependent JARs are included.\n3. Check for typos or wrong package names.",
     "keywords": [
@@ -1200,10 +1142,10 @@
       "libraries"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915103Z"
+    "updated_at": "2025-08-20T07:30:15.717715Z"
   },
   {
-    "id": "db2 sql1031n: authorization failure (tip 91)",
+    "id": "q_b69638d34cd25ae7",
     "question": "DB2 SQL1031N: Authorization failure (Tip 91)",
     "answer": "Check username/password and privileges for the DB2 user trying to connect.",
     "keywords": [
@@ -1213,10 +1155,10 @@
       "connection"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915109Z"
+    "updated_at": "2025-08-20T07:30:15.717722Z"
   },
   {
-    "id": "how to start db2 instance (tip 92)",
+    "id": "q_8e1dcc5e85ae5a57",
     "question": "How to start DB2 instance (Tip 92)",
     "answer": "Run `db2start` command in the instance environment.",
     "keywords": [
@@ -1226,10 +1168,10 @@
       "db2start"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915114Z"
+    "updated_at": "2025-08-20T07:30:15.717730Z"
   },
   {
-    "id": "how to create a new database in db2 (tip 93)",
+    "id": "q_90c78858f38f5e99",
     "question": "How to create a new database in DB2 (Tip 93)",
     "answer": "Run `CREATE DATABASE <dbname>` from DB2 CLI.",
     "keywords": [
@@ -1238,10 +1180,10 @@
       "CLI"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915119Z"
+    "updated_at": "2025-08-20T07:30:15.717737Z"
   },
   {
-    "id": "db2 connection fails from java app (tip 94)",
+    "id": "q_51ae6b9f693d579a",
     "question": "DB2 connection fails from Java app (Tip 94)",
     "answer": "1. Verify JDBC URL, username, and password.\n2. Check that DB2 server is running and reachable from the network.\n3. Ensure JDBC driver is in classpath.",
     "keywords": [
@@ -1251,10 +1193,10 @@
       "connection"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915125Z"
+    "updated_at": "2025-08-20T07:30:15.717745Z"
   },
   {
-    "id": "how to backup db2 database (tip 95)",
+    "id": "q_89d35812ed265d18",
     "question": "How to backup DB2 database (Tip 95)",
     "answer": "Run `BACKUP DATABASE <dbname> TO <path>` using DB2 CLI.",
     "keywords": [
@@ -1263,10 +1205,10 @@
       "database"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915130Z"
+    "updated_at": "2025-08-20T07:30:15.717752Z"
   },
   {
-    "id": "tomcat logs not updating, what to do (tip 96)",
+    "id": "q_6ae369aa93e65e25",
     "question": "Tomcat logs not updating, what to do (Tip 96)",
     "answer": "1. Ensure Tomcat process has write permission to logs folder.\n2. Check logging configuration in server.xml or logging.properties.\n3. Restart Tomcat to apply logging changes.",
     "keywords": [
@@ -1276,10 +1218,10 @@
       "troubleshooting"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915136Z"
+    "updated_at": "2025-08-20T07:30:15.717760Z"
   },
   {
-    "id": "application throws outofmemoryerror (tip 97)",
+    "id": "q_86d1a3eac2355f83",
     "question": "Application throws OutOfMemoryError (Tip 97)",
     "answer": "1. Increase JVM heap size using -Xmx option.\n2. Analyze memory usage using profiling tools.\n3. Check for memory leaks in the code.",
     "keywords": [
@@ -1289,10 +1231,10 @@
       "JVM"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915141Z"
+    "updated_at": "2025-08-20T07:30:15.717767Z"
   },
   {
-    "id": "why does tomcat take long to start (tip 98)",
+    "id": "q_e14377b421a1527f",
     "question": "Why does Tomcat take long to start (Tip 98)",
     "answer": "1. Check for large deployed apps or many applications.\n2. Disable unnecessary valves or listeners.\n3. Check server.xml for slow connectors.",
     "keywords": [
@@ -1301,10 +1243,10 @@
       "performance"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915146Z"
+    "updated_at": "2025-08-20T07:30:15.717775Z"
   },
   {
-    "id": "how to reset tomcat admin password (tip 99)",
+    "id": "q_e01082f6cd155935",
     "question": "How to reset Tomcat admin password (Tip 99)",
     "answer": "Edit tomcat-users.xml and update the user password, then restart Tomcat.",
     "keywords": [
@@ -1314,10 +1256,10 @@
       "tomcat-users.xml"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915151Z"
+    "updated_at": "2025-08-20T07:30:15.717782Z"
   },
   {
-    "id": "how to clear temporary files in tomcat (tip 100)",
+    "id": "q_3b0e3f0822ac598e",
     "question": "How to clear temporary files in Tomcat (Tip 100)",
     "answer": "1. Stop Tomcat.\n2. Delete contents of `work` folder.\n3. Restart Tomcat.",
     "keywords": [
@@ -1327,6 +1269,6 @@
       "cleanup"
     ],
     "tags": [],
-    "updated_at": "2025-08-17T15:53:49.915156Z"
+    "updated_at": "2025-08-20T07:30:15.717790Z"
   }
 ]

@@ -3,7 +3,7 @@ import math
 import re
 from typing import List, Tuple
 try:
-    from rapidfuzz import fuzz  # type: ignore
+    from rapidfuzz import fuzz  
     def _fuzzy_ratio(a: str, b: str) -> float:
         return fuzz.token_sort_ratio(a, b) / 100.0
 except Exception:
