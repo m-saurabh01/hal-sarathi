@@ -31,8 +31,9 @@ def set_data():
 
 
 @router.get("/", response_class=HTMLResponse)
-async def user_ui():
-    html = Path("app/templates/user.html").read_text(encoding="utf-8")
+async def widget_demo():
+    """Serve the widget demo page (shows how to embed the chatbot)."""
+    html = Path("app/templates/widget-demo.html").read_text(encoding="utf-8")
     return HTMLResponse(content=html)
 
 

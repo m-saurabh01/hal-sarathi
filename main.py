@@ -9,12 +9,12 @@ from app.routers.admin import router as admin_router
 
 app = FastAPI(title="Offline Chatbot", version="2.0")
 
-# Security headers & CORS (same-origin)
+# CORS: Allow all origins for widget embedding (widget.js calls /ask from external sites)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[],
+    allow_origins=["*"],
     allow_credentials=False,
-    allow_methods=["GET", "POST"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type"],
 )
 

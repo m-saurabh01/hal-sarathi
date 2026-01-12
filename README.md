@@ -1,108 +1,201 @@
-# Offline Chatbot
+# HAL Sarathi Chatbot
 
-A lightweight, offline-first Q&A chatbot built with FastAPI. It ships with:
+A lightweight, offline-first Q&A chatbot built with FastAPI. Features an **embeddable widget** that can be added to any website with a single script tag.
 
-- A user-friendly chat UI (Bootstrap + vanilla JS)
-- An admin dashboard for uploading/updating a knowledge base (CSV/XLSX)
-- A local matching engine (BM25-ish + fuzzy, optional semantic embeddings)
-- Privacy-minded logging of unmatched questions to improve coverage
+## Features
 
-This document explains what the app does and provides a complete setup guide for a fully offline PC. For deep architecture docs, file-by-file explanations, and API references, see the Developer Guide:
-
-→ Developer Guide: [DEV.md](./DEV.md)
-
----
-
-## What it does
-
-1) You upload a knowledge base (KB) of questions and answers in CSV or Excel (.xlsx). Each row has a question, answer, and optional keywords/tags.
-
-2) The user asks a question in the web UI. The backend computes similarity using keywords, BM25-style lexical scoring, fuzzy matching (RapidFuzz), and (optionally) local semantic embeddings. It returns a reply and relevant suggestions when confidence is moderate.
-
-3) If there’s no good match, the anonymous, sanitized query goes to `data/unmatched.csv` so you can enrich the KB later.
+- 🔌 **Embeddable Widget** – Drop-in `<hal-chatbot>` custom element with Shadow DOM isolation
+- 🛠️ **Admin Dashboard** – Upload/manage knowledge base via CSV/XLSX
+- 🔍 **Smart Matching** – BM25 + fuzzy matching + optional semantic embeddings
+- 🔒 **Privacy-First** – Fully offline, no external API calls
+- 📝 **Markdown Support** – Bot responses support bold, italic, code, links, and lists
+- ✨ **Modern UX** – Typewriter effect, breathing animation, greeting bubble
 
 ---
 
-## Fully offline setup (macOS/Windows/Linux)
+## Quick Start
 
-Prereqs (no Internet required after you have these files locally):
-- Python 3.10+ installer or preinstalled Python
-- This repository (source code)
-- Python wheels for dependencies (optional but recommended for zero-Internet install)
-- Optional: local sentence-transformers model folder if you want semantic matching (we include a MiniLM layout example)
-
-### 1) Create and activate a virtual environment
+### 1. Install Dependencies
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # macOS/Linux
-# .venv\Scripts\activate   # Windows PowerShell
-```
+# .venv\Scripts\activate   # Windows
 
-### 2) Install dependencies
-
-Offline option A (modern pip can install from local wheels):
-```bash
-pip install --no-index --find-links ./wheels -r requirements.txt
-```
-
-Online or pre-cached option:
-```bash
 pip install -r requirements.txt
 ```
 
-### 3) Optional: local semantic embeddings
-
-If you have a local model directory (e.g., `all-MiniLM-L6-v2-optimized/`), the app will try to load it. If missing, it runs in lexical/fuzzy mode only—no network calls are made.
-
-### 4) Start the app
+### 2. Start the Server
 
 ```bash
 uvicorn main:app --host 127.0.0.1 --port 8000
 ```
 
-Open:
-- User UI: http://127.0.0.1:8000/
-- Admin UI: http://127.0.0.1:8000/admin
+### 3. Access the App
 
-Default admin credentials: `admin` / `admin123` (set ADMIN_USER/ADMIN_PASS to change).
+| URL | Description |
+|-----|-------------|
+| http://127.0.0.1:8000/ | Widget demo page |
+| http://127.0.0.1:8000/admin | Admin dashboard |
 
----
-
-## Upload format
-
-Headers (case-insensitive):
-- Required: `question`, `answer`
-- Optional: `id`, `keywords`, `tags`
-
-Notes:
-- keywords/tags support semicolons or commas (e.g., `reset; password, login`).
-- When `id` is omitted, it is derived from the question. Repeated questions in the same sheet are auto-deduplicated (last wins; keywords/tags merged). If you need distinct entries, supply unique `id`s.
-- Uploading creates a timestamped backup of `data/data.json` in `data/backups/` and hot-reloads the KB.
-
-### Import modes
-
-- Replace (default): Overwrites the existing KB with only the rows in the uploaded file. Items not in the file are removed. Backup is created automatically.
-- Append (merge): Adds or updates rows into the current KB, without removing anything. If an uploaded row matches an existing `id` (or derived id from the question), its answer replaces the old one and keywords/tags are merged uniquely. Duplicates within the same upload are auto-deduped (last row wins) unless a duplicate explicit `id` is provided, which is an error.
-
-How to use:
-- In Admin UI, choose “Append (merge)” in the Import mode selector before uploading.
-- API: POST multipart form to `/admin/upload` with fields: `file=<csv|xlsx>`, `mode=append` (or `replace`).
+Default admin credentials: `admin` / `admin123` (set `ADMIN_USER`/`ADMIN_PASS` env vars to change).
 
 ---
 
-## Security & privacy
+## Embedding the Widget
 
-- Strict same-origin CORS, security headers, and CSP (adjusted to allow Bootstrap CDN unless you self-host it).
-- No outbound network calls at runtime (semantic model loads locally if present).
-- Unmatched logs are sanitized to remove emails/phone numbers before writing to `data/unmatched.csv`.
+Add the chatbot to any website with two lines of HTML:
+
+```html
+<script src="https://your-server.com/static/js/widget.js"></script>
+<hal-chatbot endpoint="https://your-server.com"></hal-chatbot>
+```
+
+### Widget Attributes
+
+| Attribute | Required | Description |
+|-----------|----------|-------------|
+| `endpoint` | Yes | Base URL of your HAL Sarathi server |
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+</head>
+<body>
+  <h1>Welcome to My Site</h1>
+  
+  <!-- HAL Sarathi Chatbot Widget -->
+  <script src="http://127.0.0.1:8000/static/js/widget.js"></script>
+  <hal-chatbot endpoint="http://127.0.0.1:8000"></hal-chatbot>
+</body>
+</html>
+```
+
+The widget appears as a floating button in the bottom-right corner with:
+- Breathing animation effect
+- Periodic greeting bubble popup
+- Full chat panel with typewriter responses
 
 ---
 
-## Troubleshooting
+## Knowledge Base Upload
 
-- Blank page in embedded browser: hard refresh, or open in your default browser.
-- No matches: check `data/data.json` format and ensure `question`/`answer` values exist.
-- XLSX upload error: ensure openpyxl is installed; otherwise export as CSV.
+### Supported Formats
+- CSV (`.csv`)
+- Excel (`.xlsx`)
 
-For implementation details and extension points, see the Developer Guide → [DEV.md](./DEV.md).
+### Required Columns
+| Column | Required | Description |
+|--------|----------|-------------|
+| `question` | ✅ | The question text |
+| `answer` | ✅ | The answer text (supports Markdown) |
+| `id` | ❌ | Unique identifier (auto-generated if omitted) |
+| `keywords` | ❌ | Semicolon or comma-separated keywords |
+| `tags` | ❌ | Semicolon or comma-separated tags |
+
+### Import Modes
+
+- **Replace** (default): Completely replaces existing KB
+- **Append**: Merges with existing KB, updates matching entries
+
+---
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/ask` | Ask a question |
+| `GET` | `/samples` | Get sample questions |
+| `GET` | `/health` | Health check |
+| `POST` | `/admin/upload` | Upload KB file |
+| `GET` | `/admin/unmatched` | View unmatched queries |
+
+### Ask Endpoint
+
+```bash
+curl -X POST http://127.0.0.1:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"message": "How do I reset my password?"}'
+```
+
+Response:
+```json
+{
+  "reply": "To reset your password, go to Settings > Security > Reset Password.",
+  "suggestions": ["How to change email?", "Account settings help"]
+}
+```
+
+---
+
+## Project Structure
+
+```
+OfflineChatbot/
+├── main.py                 # FastAPI app entry point
+├── requirements.txt        # Python dependencies
+├── app/
+│   ├── models/
+│   │   └── schemas.py      # Pydantic models
+│   ├── routers/
+│   │   ├── admin.py        # Admin endpoints
+│   │   └── public.py       # Public endpoints
+│   ├── services/
+│   │   ├── auth.py         # HTTP Basic auth
+│   │   ├── data.py         # KB load/save
+│   │   ├── embeddings.py   # Semantic embeddings
+│   │   ├── logging.py      # Query logging
+│   │   └── matcher.py      # BM25 + fuzzy matching
+│   ├── static/
+│   │   ├── css/            # Stylesheets
+│   │   ├── img/            # Images and logos
+│   │   └── js/
+│   │       ├── widget.js   # Embeddable widget
+│   │       ├── admin.js    # Admin UI logic
+│   │       └── user.js     # Standalone UI logic
+│   └── templates/
+│       ├── admin.html      # Admin dashboard
+│       ├── user.html       # Standalone chat UI
+│       └── widget-demo.html # Widget demo page
+├── data/
+│   ├── data.json           # Knowledge base
+│   ├── embeddings.npz      # Cached embeddings
+│   ├── unmatched.csv       # Logged unmatched queries
+│   └── backups/            # KB backups
+└── all-MiniLM-L6-v2-optimized/  # Local embedding model
+```
+
+---
+
+## Security & Privacy
+
+- ✅ CORS configured for widget embedding
+- ✅ Security headers (CSP, X-Frame-Options, etc.)
+- ✅ No outbound network calls at runtime
+- ✅ PII sanitization before logging unmatched queries
+- ✅ Admin routes protected with HTTP Basic auth
+
+---
+
+## Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ADMIN_USER` | `admin` | Admin username |
+| `ADMIN_PASS` | `admin123` | Admin password |
+
+---
+
+## Development
+
+For detailed architecture, code flow, and extension guides, see [DEV.md](./DEV.md).
+
+---
+
+## License
+
+MIT License

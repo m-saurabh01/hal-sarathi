@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HAL Sarathi Widget Demo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .demo-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #1d4ed8;
+      margin-bottom: 12px;
+      font-size: 28px;
+    }
+    p { color: #4b5563; margin-bottom: 20px; line-height: 1.6; }
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .code-block .tag { color: #f472b6; }
+    .code-block .attr { color: #a5b4fc; }
+    .code-block .val { color: #86efac; }
+    .code-block .comment { color: #64748b; }
+    .divider { border-top: 1px solid #e5e7eb; margin: 24px 0; }
+    .links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .links a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1d4ed8;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .links a:hover { background: #1b46c2; }
+    .links a.secondary {
+      background: #f1f5f9;
+      color: #334155;
+    }
+    .links a.secondary:hover { background: #e2e8f0; }
+    .arrow { margin-left: 8px; }
+    .note { font-size: 13px; color: #6b7280; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="demo-card">
+    <h1>🤖 HAL Sarathi Widget</h1>
+    <p>
+      This is a demo page showing the embeddable chatbot widget. 
+      Click the chat icon in the <strong>bottom-right corner</strong> to try it!
+    </p>
+    
+    <h3 style="color:#0b1220;margin-bottom:12px;">Embed on Your Website</h3>
+    <div class="code-block">
+      <span class="comment">&lt;!-- Add this before &lt;/body&gt; --&gt;</span><br>
+      <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"http://localhost:8000/static/js/widget.js"</span><span class="tag">&gt;&lt;/script&gt;</span><br>
+      <span class="tag">&lt;hal-chatbot</span> <span class="attr">endpoint</span>=<span class="val">"http://localhost:8000"</span><span class="tag">&gt;&lt;/hal-chatbot&gt;</span>
+    </div>
+    
+    <p class="note">
+      Or auto-initialize with a data attribute:
+    </p>
+    <div class="code-block">
+      <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"http://localhost:8000/static/js/widget.js"</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-endpoint</span>=<span class="val">"http://localhost:8000"</span><span class="tag">&gt;&lt;/script&gt;</span>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="links">
+      <a href="/admin">Admin Dashboard <span class="arrow">→</span></a>
+      <a href="/admin/unmatched" class="secondary">View Unmatched</a>
+    </div>
+  </div>
+
+  <!-- The widget itself -->
+  <script src="/static/js/widget.js"></script>
+  <hal-chatbot endpoint=""></hal-chatbot>
+  
+  <script>
+    // Set endpoint dynamically (same origin for demo)
+    document.querySelector('hal-chatbot').setAttribute('endpoint', window.location.origin);
+  </script>
+</body>
+</html>
